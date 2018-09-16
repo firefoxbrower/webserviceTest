@@ -1,0 +1,15 @@
+*.pdb
+*.cdb
+.settings/*
+.classpath
+.project
+*.iml
+.idea/*
+build/*
+out/*
+classes/*
+.externalToolBuilders/*
+WebContent/WEB-INF/classes/*
+WebContent/WEB-INF/attachments/*
+target/*
+out/*
