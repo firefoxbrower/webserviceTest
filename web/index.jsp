@@ -5,7 +5,7 @@
 <h2>Hello SangBigYe!</h2>
 </body>
 <script>
-    window.location.href='${pageContext.request.contextPath}/services/IBankingService?wsdl';
+    window.location.href='${pageContext.request.contextPath}/service/HelloWorld.ws?wsdl';
 </script>
 
 </html>
