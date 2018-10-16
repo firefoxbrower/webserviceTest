@@ -25,7 +25,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>compile</scope>
+            <scope>test</scope>
         </dependency>
         <!-- spring start -->
         <dependency>
@@ -149,6 +149,11 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+        </dependency>
 
 
 
@@ -317,49 +322,7 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
         </dependency>
-
-
-        <!--Apache POI-->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.9</version>
-        </dependency>
-        <dependency>
-            <groupId>poi</groupId>
-            <artifactId>poi-contrib-2.5-final</artifactId>
-            <version>20040302</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.9</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>javax.mail</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>12.0.1</version>
-        </dependency>
-
-
-
-
-        <dependency>
-            <groupId>proxool</groupId>
-            <artifactId>proxool</artifactId>
-            <version>0.8.3</version>
-        </dependency>
-
-
+        
         <!-- servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -374,21 +337,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--others-->
 
-        <!-- database drivers -->
-        <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc14</artifactId>
-            <version>${oracle.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.apache.axiom</groupId>
-            <artifactId>com.springsource.org.apache.axiom</artifactId>
-            <version>1.2.5</version>
-        </dependency>
+  
 
+     
 
     </dependencies>
 

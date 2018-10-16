@@ -2,20 +2,24 @@ package webservice;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import java.io.IOException;
-import java.io.RandomAccessFile;
 import org.codehaus.xfire.util.Base64;
 
 public class HelloWorldImpl implements HelloWorld {
+    
 
-    private RandomAccessFile raf=null;
+    @Override
+    public String sayHelloWorld(String name) {
+            String helloWorld = "hello," + name;
+            return helloWorld;
+        }
+    
 
-    /**
-     * @filename:要下载的文件名（全名）;
-     * @startpost:由于WebService不能一次性传输大文件，所以使用startpost定位参数来实现断点续传；
-     * @return:把文件内容Byte[]转换成Base64编码返回；
-     */
+        /**
+         * @filename:要下载的文件名（全名）;
+         * @startpost:由于WebService不能一次性传输大文件，所以使用startpost定位参数来实现断点续传；
+         * @return:把文件内容Byte[]转换成Base64编码返回；
+         */
     @Override
     public String download(String filename, long startpost) throws Exception {
         //System.out.println("要下载的文件名是："+filename);

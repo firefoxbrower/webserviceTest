@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="dispathcherServlet-sevlet.xml"></import>
+    <bean id="SysUrlMapping"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <!--webservice-->
+                <prop key="/websvr.do">webSvrAction</prop>
+            </props>
+        </property>
+    </bean>
+    <!--webservice-->
+    <bean id="webSvrAction" class="websvr.action.WebSvrAction">
+        <property name="methodNameResolver">
+            <ref bean="paraMethodResolver"/>
+        </property>
+    </bean>
+</beans>

@@ -7,10 +7,23 @@ import java.io.RandomAccessFile;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.codehaus.xfire.util.Base64;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import webservice.HelloWorld;
 
 
 public class DynamicClientTest {
 
+    HelloWorld helloWorld = null;
+    public void testClient(){
+
+        ApplicationContext ctx = new ClassPathXmlApplicationContext(
+                "xfire-client.xml");
+        helloWorld = (HelloWorld) ctx.getBean("testWebService");
+        System.out.println(helloWorld.sayHelloWorld("阿蜜果"));
+        
+    }
+    
     public Object[] getWebService(String surl,String saction,Object[] objarr) throws MalformedURLException,Exception {
         Client client = new Client(new URL(surl));
         //client.setProperty("mtom-enabled", "true");
@@ -20,8 +33,11 @@ public class DynamicClientTest {
     }
 
     public static void main(String[] args) throws MalformedURLException,Exception {
-        String surl="http://localhost:8080/webserviceXfire/service/HelloWorld?wsdl";
 
+        DynamicClientTest test = new DynamicClientTest();
+        test.testClient();
+    
+/*
         Long start=System.currentTimeMillis();
         File file=new File("e://","test.rar");
         RandomAccessFile raf=new RandomAccessFile(file,"rw");
@@ -42,6 +58,6 @@ public class DynamicClientTest {
         raf.close();
 
         Long end=System.currentTimeMillis();
-        System.out.println("用时："+(end-start));
+        System.out.println("用时："+(end-start));*/
     }
 }

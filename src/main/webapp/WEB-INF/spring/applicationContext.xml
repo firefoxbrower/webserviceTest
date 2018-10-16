@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <import resource="xfire-servlet.xml"/>
+    <import resource="controll-config.xml"/>
+    <bean id="HelloWorldBean" class="webservice.HelloWorldImpl"/>
+    
+    <!--webservice 接口实现类 -->
+    <bean id="readerBean" class="websvr.bean.Reader" />
+    <bean id="readerService" class="webservice.service.ReaderService">
+       <!--set 注入-->
+        <property name="reader" ref="readerBean"></property>
+    </bean>
+
+   
+</beans>
