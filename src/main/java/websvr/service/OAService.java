@@ -6,4 +6,6 @@ import websvr.bean.OAResponse;
 public interface OAService {
     
    OAResponse sendFile(OARequest request);
+   
+ //  void receiveFile();
 }

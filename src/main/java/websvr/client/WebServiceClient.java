@@ -8,14 +8,32 @@ import websvr.service.OAService;
 
 public class WebServiceClient {
 
+    private static ApplicationContext applicationContext ;
+    private static WebServiceClient client ;
+    public static WebServiceClient getWebServiceClient(){
+        if(WebServiceClient.client==null){
+            WebServiceClient.client = new WebServiceClient();
+        }
+        return WebServiceClient.client;
+    }
+    private WebServiceClient(){
+
+    };
+
+    private static  ApplicationContext getApplicationContext(String xmlName){
+        if(WebServiceClient.applicationContext==null){
+                WebServiceClient.applicationContext = new ClassPathXmlApplicationContext(xmlName);
+        }
+        return WebServiceClient.applicationContext;
+    };
+
+    
+//    实例方法
     public OAResponse testClient(OARequest oaRequest) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(
-                "xfire-client.xml");
-     OAService oaService = (OAService) ctx.getBean("testWebService");
-     OAResponse oaResponse =   oaService.sendFile(oaRequest);
-        System.out.println(oaService.sendFile(oaRequest).toString());
+        ApplicationContext ctx =  WebServiceClient.getApplicationContext("xfire-client.xml");
+        OAService oaService =  oaService = ctx.getBean("testWebService",OAService.class);
+        OAResponse oaResponse =  oaService.sendFile(oaRequest);
         return oaResponse;
-        
     }
     
     

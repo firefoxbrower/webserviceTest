@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>webservice.webserviceXFire</groupId>
     <artifactId>webservice.webserviceXFire</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -83,11 +82,11 @@
             <artifactId>spring-jms</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
-        <!--  <dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
-            <version>${org.springframework.version}</version>
-          </dependency>-->
+            <version>5.1.1.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
@@ -129,11 +128,11 @@
             <artifactId>spring-webmvc-portlet</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
-        <!--   <dependency>
-              <groupId>org.springframework</groupId>
-              <artifactId>spring-websocket</artifactId>
-              <version>${org.springframework.version}</version>
-            </dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
+            <version>5.1.1.RELEASE</version>
+        </dependency>
         <!-- spring end -->
 
         <dependency>
@@ -154,9 +153,6 @@
             <artifactId>json-lib</artifactId>
             <version>2.4</version>
         </dependency>
-
-
-
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
@@ -336,13 +332,6 @@
             <version>2.2</version>
             <scope>provided</scope>
         </dependency>
-
-
-
-  
-
-     
-
     </dependencies>
 
     <build>

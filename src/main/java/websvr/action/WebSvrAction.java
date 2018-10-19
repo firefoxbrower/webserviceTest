@@ -49,7 +49,7 @@ public class WebSvrAction extends MultiActionController {
         OARequest oaRequest = new OARequest();
         oaRequest.setFileName("dsdssd");
         oaRequest.setFileObject("sdds");
-        WebServiceClient websvrClient  = new WebServiceClient();
+        WebServiceClient websvrClient  = WebServiceClient.getWebServiceClient();
         websvrClient.testClient(oaRequest);
          
 
@@ -60,7 +60,6 @@ public class WebSvrAction extends MultiActionController {
         int BUFFER_LENGTH = 1024 * 20;//一次性读入大小
         int SLEEP_TIME=250;//循环读次数
         int time=0;
-
         String ret=null;
         String str=null;
         fis.skip(startpost);//先定位
@@ -120,25 +119,26 @@ public class WebSvrAction extends MultiActionController {
                     long  startpost = 0;
                    String download = this.download(is, fileSize,startpost);
                     System.out.println(download);
-                   // String path="E:/springUpload"+file.getOriginalFilename();
+                    // String path="E:/springUpload"+file.getOriginalFilename();
                     
                     
                     //获取输出流
-                  //  OutputStream os=new FileOutputStream("E:/"+new Date().getTime()+file.getOriginalFilename());
+                    // OutputStream os=new FileOutputStream("E:/springUpload"+new Date().getTime()+file.getOriginalFilename());
                     //上传
-                  //  file.transferTo(new File(path));
+//                   file.transferTo(new File(path));
                     //获取输出流
-                   // os.flush();
-                   // os.close();
-                    is.close();
+//                   os.flush();
+//                   os.close();
+//                    is.close();
 
                     // 传递给webservice
-                    WebServiceClient websvrClient  = new WebServiceClient();
+                    WebServiceClient websvrClient  = WebServiceClient.getWebServiceClient();
                     OARequest oaRequest = new OARequest();
+                    oaRequest.setFileID(new Integer(new Random().nextInt(4)).toString());
                     oaRequest.setFileName(file.getOriginalFilename());
                     oaRequest.setFileObject(download);
                     OAResponse oaResponse = websvrClient.testClient(oaRequest);
-
+                    
                 }
 
             }
