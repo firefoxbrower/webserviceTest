@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import websvr.bean.OARequest;
 import websvr.bean.OAResponse;
+import websvr.bean.ReceiveRequest;
 import websvr.service.OAService;
 
 public class WebServiceClient {
@@ -35,7 +36,14 @@ public class WebServiceClient {
         OAResponse oaResponse =  oaService.sendFile(oaRequest);
         return oaResponse;
     }
-    
+
+    public OAResponse receiveClient(ReceiveRequest request) {
+        ApplicationContext ctx =  WebServiceClient.getApplicationContext("xfire-client.xml");
+        OAService oaService =  oaService = ctx.getBean("testWebService",OAService.class);
+        OAResponse oaResponse =  oaService.receiveFile(request);
+        return oaResponse;
+    }
+       
     
 
 }

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import websvr.bean.OARequest;
 import websvr.bean.OAResponse;
+import websvr.bean.ReceiveRequest;
 import websvr.client.DynamicClientTest;
 import websvr.client.WebServiceClient;
 
@@ -138,6 +139,14 @@ public class WebSvrAction extends MultiActionController {
                     oaRequest.setFileName(file.getOriginalFilename());
                     oaRequest.setFileObject(download);
                     OAResponse oaResponse = websvrClient.testClient(oaRequest);
+                    
+                    //接受文件的webservice
+                    ReceiveRequest receiver = new ReceiveRequest();
+                    receiver.setAuditID("user001");
+                    receiver.setID(oaRequest.getId());
+                    receiver.setOaRequest(oaRequest);
+                    OAResponse recieveResponse = websvrClient.receiveClient(receiver);
+                    
                     
                 }
 

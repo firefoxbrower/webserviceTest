@@ -3,6 +3,7 @@ package websvr.service;
 import websvr.bean.OARequest;
 import websvr.bean.OAResponse;
 import net.sf.json.JSONObject;
+import websvr.bean.ReceiveRequest;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -53,6 +54,23 @@ public class OAServiceImpl implements  OAService {
         
     }
     
-    
+    @Override
+    public  OAResponse receiveFile(ReceiveRequest request){
+      OAResponse response = new OAResponse() ;
+      request.getAuditID();
+      OARequest oaRequest = request.getOaRequest();
+      request.getID();
+      response.setID(oaRequest.getId());
+      response.setErrMsg("0");
+      Date date= new Date(System.currentTimeMillis());
+      String pattern="yyyy-MM-dd HH:mm:ss";
+      SimpleDateFormat sdf= new SimpleDateFormat(pattern);
+      String datestr=sdf.format(date);// format  为格式化方法
+      response.setReceiptTime(datestr);
+      response.setErrCode("no");
+      JSONObject json = JSONObject.fromObject(response);
+      System.out.println(json);
+      return response;
+    }
     
 }
