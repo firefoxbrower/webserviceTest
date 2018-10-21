@@ -3,14 +3,14 @@
 <beans>
     <import resource="xfire-servlet.xml"/>
     <import resource="controll-config.xml"/>
-    <bean id="HelloWorldBean" class="webservice.HelloWorldImpl"/>
+    <!--<bean id="HelloWorldBean" class="webservice.HelloWorldImpl"/>-->
     
     <!--webservice 接口实现类 -->
     <bean id="readerBean" class="websvr.bean.Reader" />
-    <bean id="readerService" class="webservice.service.ReaderService">
+    <!--<bean id="readerService" class="webservice.service.ReaderService">-->
        <!--set 注入-->
-        <property name="reader" ref="readerBean"></property>
-    </bean>
+        <!--<property name="reader" ref="readerBean"></property>-->
+    <!--</bean>-->
 
    
 </beans>
