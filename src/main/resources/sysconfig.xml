@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!-- mysql数据库连接配置 -->
+	<URL>jdbc:mysql://localhost:5188/asdb?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8</URL>
+	<USERNAME>xoops_root</USERNAME>
+	<PASSWORD>654321</PASSWORD>
+	
+	<SURL>jdbc:microsoft:sqlserver://192.168.1.102:1433;DatabaseName=jsgat</SURL>
+	<SUSERNAME>sa</SUSERNAME>
+	<SPASSWORD>sa</SPASSWORD>
+	
+	<!-- mysql数据库数据文件根目录 -->
+	<DBPATH>H:/MYSQL/database</DBPATH>
+	<!-- 科目对照参数 -->
+	<KeyResult>1</KeyResult>
+	<!-- MP3_文件上传临时目录 ：默认是C:/TEMP/-->
+	<SERVERTEMPDIR>d:/TEMP/</SERVERTEMPDIR>
+	<SERVERFILEDIR>d:/TEMP/UPLOAD/</SERVERFILEDIR>
+	<TREEICONLIST>
+		<TR>tree_folder_close</TR>
+		<TR>tree_folder_open</TR>
+		<TR>tree_folder_user</TR>
+		<TR>tree_user_group</TR>
+		<TR>tree_user</TR>
+		<TR>tree_user_female</TR>
+		<TR>tree_doc</TR>
+		<TR>tree_xls</TR>
+	</TREEICONLIST>
+	
+	<!-- 系统数据库类别   DM：达梦数据库   Oracle:oracle数据库 -->
+	<SYSTEMDBTYPE>Oracle</SYSTEMDBTYPE>
+</root>

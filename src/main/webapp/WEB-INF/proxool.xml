@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxool-config>
+
+    <!-- oracle数据库 -->
+    <proxool>
+        <alias>oracle</alias>
+        <!--<driver-url>jdbc:oracle:thin:@192.168.1.40:1521:orcl</driver-url>-->
+        <driver-url>jdbc:oracle:thin:@127.0.0.1:1521:orcl</driver-url>
+        <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+        <driver-properties>
+            <property name="user" value="jsgat"/>
+            <property name="password" value="jsgat"/>
+        </driver-properties>
+        <house-keeping-sleep-time>900000</house-keeping-sleep-time>
+        <maximum-connection-count>100</maximum-connection-count>
+        <house-keeping-test-sql>select sysdate from dual;</house-keeping-test-sql>
+    </proxool>
+
+    <!-- 达梦数据库 -->
+    <!-- <proxool>
+        <alias>dm</alias>
+        <driver-url>jdbc:dm://127.0.0.1</driver-url>
+        <driver-class>dm.jdbc.driver.DmDriver</driver-class>
+        <driver-properties>
+            <property name="user" value="JSGAT"/>
+            <property name="password" value="JSGATJSGAT"/>
+        </driver-properties>
+        <house-keeping-sleep-time>900000</house-keeping-sleep-time>
+        <maximum-connection-count>100</maximum-connection-count>
+        <house-keeping-test-sql>select sysdate from dual;</house-keeping-test-sql>
+    </proxool> -->
+
+</proxool-config>
