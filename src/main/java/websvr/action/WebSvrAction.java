@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import websvr.bean.OARequest;
 import websvr.bean.OAResponse;
 import websvr.bean.ReceiveRequest;
-import websvr.client.DynamicClientTest;
+
 import websvr.client.WebServiceClient;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,12 +38,6 @@ public class WebSvrAction extends MultiActionController {
         return view;
     }
     
-    public  void  websvrClient (HttpServletRequest request, HttpServletResponse response){
-        //  response.setContentType("text/json;charset=utf-8");
-        DynamicClientTest client =  new DynamicClientTest();
-        
-      
-    }
 
     public  void  springClient (HttpServletRequest request, HttpServletResponse response){
          response.setContentType("text/json;charset=utf-8");
