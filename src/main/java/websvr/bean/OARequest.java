@@ -3,9 +3,11 @@ package websvr.bean;
 import java.util.UUID;
 
 public class OARequest {
-    
+
+    private static final long serialVersionUID = -5809782578272943999L;
     //请求ID
-    String id = UUID.randomUUID().toString().replaceAll("-", "");
+   // String id = UUID.randomUUID().toString().replaceAll("-", "");
+    String id = null ;
     //项目ID
     String prjId  = null;
     // 项目名字

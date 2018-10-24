@@ -19,21 +19,21 @@
  
 
   <!--数据连接池-->
-  <servlet>
-    <servlet-name>ServletConfigurator</servlet-name>
-    <servlet-class>
-      org.logicalcobwebs.proxool.configuration.ServletConfigurator
-    </servlet-class>
-    <init-param>
-      <param-name>xmlFile</param-name>
-      <param-value>/WEB-INF/proxool.xml</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletConfigurator</servlet-name>
-    <url-pattern>/ServletConfigurator</url-pattern>
-  </servlet-mapping>
+  <!--<servlet>-->
+    <!--<servlet-name>ServletConfigurator</servlet-name>-->
+    <!--<servlet-class>-->
+      <!--org.logicalcobwebs.proxool.configuration.ServletConfigurator-->
+    <!--</servlet-class>-->
+    <!--<init-param>-->
+      <!--<param-name>xmlFile</param-name>-->
+      <!--<param-value>/WEB-INF/proxool.xml</param-value>-->
+    <!--</init-param>-->
+    <!--<load-on-startup>1</load-on-startup>-->
+  <!--</servlet>-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>ServletConfigurator</servlet-name>-->
+    <!--<url-pattern>/ServletConfigurator</url-pattern>-->
+  <!--</servlet-mapping>-->
 
     <!--spring-->
     <servlet>
@@ -50,15 +50,15 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-  <servlet>
-    <servlet-name>controller</servlet-name>
-    <servlet-class>matech.controller.SystemController</servlet-class>
-    <load-on-startup>3</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>controller</servlet-name>
-    <url-pattern>/controller</url-pattern>
-  </servlet-mapping>
+  <!--<servlet>-->
+    <!--<servlet-name>controller</servlet-name>-->
+    <!--<servlet-class>matech.controller.SystemController</servlet-class>-->
+    <!--<load-on-startup>3</load-on-startup>-->
+  <!--</servlet>-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>controller</servlet-name>-->
+    <!--<url-pattern>/controller</url-pattern>-->
+  <!--</servlet-mapping>-->
 
   <servlet>
     <servlet-name>xfire</servlet-name>

@@ -147,6 +147,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.xfire</groupId>
+            <artifactId>xfire-spring</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+
 
         <dependency>
             <groupId>net.sf.json-lib</groupId>
@@ -266,6 +272,11 @@
        
         <!-- jackson json -->
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.51</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.servanter</groupId>
             <artifactId>netsfjson-support-spring</artifactId>
             <version>1.0.0</version>
@@ -276,11 +287,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.21</version>
-        </dependency>
+    
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -479,6 +486,12 @@
             <groupId>sunhao</groupId>
             <artifactId>kettle-vfs</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

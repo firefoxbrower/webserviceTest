@@ -1,7 +1,8 @@
 package websvr.bean;
 
 public class OAResponse {
-    
+
+    private static final long serialVersionUID = 1L;
     //响应参数 ID 请求ID
     //receiptTime 送达时间
     // errCode   返回代码
@@ -11,6 +12,8 @@ public class OAResponse {
     
     String errCode  = null ;
     String errMsg  = null ;
+    
+    public OAResponse(){};
 
     public String getID() {
         return ID;

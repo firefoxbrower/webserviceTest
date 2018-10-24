@@ -1,14 +1,7 @@
 package websvr.action;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.codehaus.xfire.util.Base64;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
@@ -45,7 +38,7 @@ public class WebSvrAction extends MultiActionController {
         oaRequest.setFileName("dsdssd");
         oaRequest.setFileObject("sdds");
         WebServiceClient websvrClient  = WebServiceClient.getWebServiceClient();
-        websvrClient.testClient(oaRequest);
+        //websvrClient.testClient(oaRequest);
          
 
     }
@@ -113,7 +106,9 @@ public class WebSvrAction extends MultiActionController {
                     // 断点
                     long  startpost = 0;
                    String download = this.download(is, fileSize,startpost);
-                    System.out.println(download);
+                   // System.out.println(download);
+                    System.out.println("文件大小: "+ fileSize );
+                    System.out.println(new String( Base64.decode(download)));
                     // String path="E:/springUpload"+file.getOriginalFilename();
                     
                     
@@ -127,19 +122,19 @@ public class WebSvrAction extends MultiActionController {
 //                    is.close();
 
                     // 传递给webservice
-                    WebServiceClient websvrClient  = WebServiceClient.getWebServiceClient();
-                    OARequest oaRequest = new OARequest();
-                    oaRequest.setFileID(new Integer(new Random().nextInt(4)).toString());
-                    oaRequest.setFileName(file.getOriginalFilename());
-                    oaRequest.setFileObject(download);
-                    OAResponse oaResponse = websvrClient.testClient(oaRequest);
+//                    WebServiceClient websvrClient  = WebServiceClient.getWebServiceClient();
+//                    OARequest oaRequest = new OARequest();
+//                    oaRequest.setFileID(new Integer(new Random().nextInt(4)).toString());
+//                    oaRequest.setFileName(file.getOriginalFilename());
+//                    oaRequest.setFileObject(download);
+//                    OAResponse oaResponse = websvrClient.testClient(oaRequest);
                     
                     //接受文件的webservice
-                    ReceiveRequest receiver = new ReceiveRequest();
-                    receiver.setAuditID("user001");
-                    receiver.setID(oaRequest.getId());
-                    receiver.setOaRequest(oaRequest);
-                    OAResponse recieveResponse = websvrClient.receiveClient(receiver);
+//                    ReceiveRequest receiver = new ReceiveRequest();
+//                    receiver.setAuditID("user001");
+//                    receiver.setID(oaRequest.getId());
+//                    receiver.setOaRequest(oaRequest);
+//                    OAResponse recieveResponse = websvrClient.receiveClient(receiver);
                     
                     
                 }
