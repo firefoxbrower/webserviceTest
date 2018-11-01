@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    
+  <description>Matech tag</description>
+  <display-name>Matech</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>Matech</short-name>
+  <uri>http://www.matech.cn/tag</uri>
+ <tag>
+  	<description>
+        print the result on web page by pp bean
+    </description>
+    <name>DataGridPrintByBean</name>
+    <tag-class>com.mt.framework.tags.DataGridBeanTag</tag-class>
+    <body-content>JSP</body-content>
+    <attribute>
+    	<description>
+    		DataGridProperty 实例的名字
+    	</description>
+    	<name>name</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+	<attribute>
+    	<description>
+    		DataGridProperty 输出数据的模式
+    	</description>
+    	<name>outputType</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+    
+    <attribute>
+    	<description>
+    		DataGridProperty 是否输出数据
+    	</description>
+    	<name>outputData</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    
+    <attribute>
+    	<description>
+    		DataGridProperty 输出框架时带的信息
+    	</description>
+    	<name>message</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<description>
+        print the result on web page by pp bean
+    </description>
+    <name>MTableGridPrintByBean</name>
+    <tag-class>com.matech.audit.tags.DataGridBeanTag</tag-class>
+    <body-content>JSP</body-content>
+    <attribute>
+    	<description>
+    		MTableGridProperty 实例的名字
+    	</description>
+    	<name>name</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+	<attribute>
+    	<description>
+    		MTableGridProperty 输出数据的模式
+    	</description>
+    	<name>outputType</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+    
+    <attribute>
+    	<description>
+    		MTableGridProperty 是否输出数据
+    	</description>
+    	<name>outputData</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    
+    <attribute>
+    	<description>
+    		MTableGridProperty 输出框架时带的信息
+    	</description>
+    	<name>message</name>
+    	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+  
+</taglib>

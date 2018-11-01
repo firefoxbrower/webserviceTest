@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>webservice.webserviceXFire</groupId>
-    <artifactId>webservice.webserviceXFire</artifactId>
+    <groupId>webserviceXFire</groupId>
+    <artifactId>webserviceXFire</artifactId>
     <version>1.0-SNAPSHOT</version>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>

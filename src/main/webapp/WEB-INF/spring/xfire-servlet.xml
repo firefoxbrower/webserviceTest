@@ -12,10 +12,10 @@
         <property name="xfire" ref="xfire" />
     </bean>
 
-    <bean id="sendFileBean" class="websvr.service.OAServiceImpl"></bean>      
-    <bean id="sendFile" parent="baseWebService">
+    <bean id="oaBean" class="websvr.service.OAServiceImpl"></bean>      
+    <bean id="oaService" parent="baseWebService">
         <!-- 业务服务bean 接口实现类 -->
-        <property name="serviceBean" ref="sendFileBean"></property>
+        <property name="serviceBean" ref="oaBean"></property>
         <!-- 业务服务bean的窄接口类 -->
         <property name="serviceClass" value="websvr.service.OAService" />
     </bean>
@@ -23,11 +23,31 @@
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="urlMap">
             <map>
-                <entry key="/sendFile.ws">
-                    <ref bean="sendFile" />
+                <entry key="/oaBean.ws">
+                    <ref bean="oaService" />
                 </entry>
             </map>
         </property>
     </bean>
     
+    <!--工作流-->
+    <bean id="flowBean" class="websvr.service.WorkflowServiceImpl"></bean>
+    <bean id="flowService" parent="baseWebService">
+        <!-- 业务服务bean 接口实现类 -->
+        <property name="serviceBean" ref="flowBean"></property>
+        <!-- 业务服务bean的窄接口类 -->
+        <property name="serviceClass" value="websvr.service.WorkflowService" />
+    </bean>
+    <!--定义访问的url-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/flowService.ws">
+                    <ref bean="flowService" />
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+
 </beans>

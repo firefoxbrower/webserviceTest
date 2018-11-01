@@ -30,19 +30,18 @@ public class WebServiceClient {
 
     
 //    实例方法
-//    public OAResponse testClient(OARequest oaRequest) {
-//        ApplicationContext ctx =  WebServiceClient.getApplicationContext("xfire-client.xml");
-//        OAService oaService =  oaService = ctx.getBean("testWebService",OAService.class);
-//        OAResponse oaResponse =  oaService.sendFile(oaRequest);
-//        return oaResponse;
-//    }
-//
-//    public OAResponse receiveClient(ReceiveRequest request) {
-//        ApplicationContext ctx =  WebServiceClient.getApplicationContext("xfire-client.xml");
-//        OAService oaService =  oaService = ctx.getBean("testWebService",OAService.class);
-//        OAResponse oaResponse =  oaService.receiveFile(request);
-//        return oaResponse;
-//    }
+    public String  testClient(String id ,String auditID ,String prjID ,String prjName,String fileTypeID,String fileType ,
+                                 String submmitterID,String submmitterName,String fileID,String fileName,
+                                 String fileObject ,String fileMD5 ){
+        
+        ApplicationContext ctx =  WebServiceClient.getApplicationContext("xfire-client.xml");
+        OAService oaService =  oaService = ctx.getBean("testWebService",OAService.class);
+        String  oaResponse =  oaService.receiveFile(id ,auditID,prjID ,prjName,fileTypeID, fileType ,
+                submmitterID,submmitterName,fileID,fileName,fileObject , fileMD5 );
+        return oaResponse;
+    }
+
+    
        
     
 

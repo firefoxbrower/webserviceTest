@@ -12,62 +12,25 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
+/**
+ * @author Administrator
+ */
 public class OAServiceImpl implements  OAService {
     
     private static Log log = LogFactory.getLog(OAServiceImpl.class);
     OAResponse oaResponse = new OAResponse();
- 
-    @Override
-    public String test(String fileName, String base64, String md5) {
-        log.info("文件名:"+ fileName);
-        log.info("编码内容:"+base64);
-        try {
-            System.out.println(new String( Base64.decode(base64)));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        byte[] buffer2 = Base64.decode(base64);
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        md.update(buffer2, 0, buffer2.length);
-        
-        BigInteger bigInt = new BigInteger(1, md.digest());
-        String md5val = bigInt.toString(16);
-        String errormsg = null ;
-       
-        if (!StringUtils.equalsIgnoreCase(md5, md5val)) {// MD5值不一致
-            errormsg = "md5_error";
-            oaResponse.setErrCode("1");
-            oaResponse.setErrMsg("md5 校验失败");
-        }else{
-            // md5一致
-            oaResponse.setErrCode("0");
-            oaResponse.setErrMsg("");
-        }
-       
-        log.info("文件的md:"+md5);
-        log.info("errormsg:"+errormsg);
-        oaResponse.setID("88899");
-        Date date= new Date(System.currentTimeMillis());
-        String pattern="yyyy-MM-dd HH:mm:ss";
-        SimpleDateFormat sdf= new SimpleDateFormat(pattern);
-        String datestr=sdf.format(date);// format  为格式化方法
-        oaResponse.setReceiptTime(datestr);
-        JSONObject jsonObject = JSONObject.fromObject(oaResponse);
-        System.out.println(jsonObject.toString());
-        return jsonObject.toString();
-    }
+
+
+
+
 
     @Override
-    public String sendFile(String id, String prjID, String prjName, String fileTypeID, String fileType, String submmitterID, String submmitterName, String fileID, String fileName, String fileObject, String fileMD5) {
+    public String receiveFile(String id, String auditID, String prjID, String prjName, String fileTypeID, String fileType, String submmitterID, String submmitterName, String fileID, String fileName, String fileObject, String fileMD5) {
         log.info("文件名:"+ fileName);
         log.info("编码内容:"+fileObject);
-       
+        log.info("md值:"+ fileMD5);
+
 
         byte[] buffer = Base64.decode(fileObject);
         MessageDigest md = null;
@@ -90,7 +53,7 @@ public class OAServiceImpl implements  OAService {
             // md5一致
             oaResponse.setErrCode("0");
             oaResponse.setErrMsg("");
-           
+
         }
         oaResponse.setID(id);
         Date date= new Date(System.currentTimeMillis());
@@ -104,6 +67,51 @@ public class OAServiceImpl implements  OAService {
     }
 }
 
+
+//    @Override
+//    public String test(String fileName, String base64, String md5) {
+//        log.info("文件名:"+ fileName);
+//        log.info("编码内容:"+base64);
+//        try {
+//            System.out.println(new String( Base64.decode(base64)));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        byte[] buffer2 = Base64.decode(base64);
+//        MessageDigest md = null;
+//        try {
+//            md = MessageDigest.getInstance("MD5");
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//        }
+//        md.update(buffer2, 0, buffer2.length);
+//        
+//        BigInteger bigInt = new BigInteger(1, md.digest());
+//        String md5val = bigInt.toString(16);
+//        String errormsg = null ;
+//       
+//        if (!StringUtils.equalsIgnoreCase(md5, md5val)) {// MD5值不一致
+//            errormsg = "md5_error";
+//            oaResponse.setErrCode("1");
+//            oaResponse.setErrMsg("md5 校验失败");
+//        }else{
+//            // md5一致
+//            oaResponse.setErrCode("0");
+//            oaResponse.setErrMsg("");
+//        }
+//        log.info("文件的md:"+md5);
+//        log.info("errormsg:"+errormsg);
+//        oaResponse.setID("88899");
+//        Date date= new Date(System.currentTimeMillis());
+//        String pattern="yyyy-MM-dd HH:mm:ss";
+//        SimpleDateFormat sdf= new SimpleDateFormat(pattern);
+//        String datestr=sdf.format(date);// format  为格式化方法
+//        oaResponse.setReceiptTime(datestr);
+//        JSONObject jsonObject = JSONObject.fromObject(oaResponse);
+//        System.out.println(jsonObject.toString());
+//        return jsonObject.toString();
+//    }
 //    @Override
 //    public OAResponse sendFile(OARequest request) {
 //       
