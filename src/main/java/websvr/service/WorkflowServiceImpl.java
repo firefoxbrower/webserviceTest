@@ -188,6 +188,26 @@ public class WorkflowServiceImpl implements WorkflowService {
     }
 
     @Override
+    public String getUserId(String in0, String in1) {
+        return null;
+    }
+
+    @Override
+    public String givingOpinions(int in0, int in1, String in2) {
+        return null;
+    }
+
+    @Override
+    public String doForceOver(int in0, int in1) {
+        return null;
+    }
+
+    @Override
+    public String forward2WorkflowRequest(int in0, String in1, String in2, int in3, String in4) {
+        return null;
+    }
+
+    @Override
     public String[] getCreateWorkflowTypeList(int in0, int in1, int in2, int in3, String[] in4)  {
         return new String[0];
     }

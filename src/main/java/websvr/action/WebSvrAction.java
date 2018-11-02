@@ -70,7 +70,6 @@ public class WebSvrAction extends MultiActionController {
                    
                    // System.out.println(download);
                     System.out.println("文件大小: "+ fileSize );
-                    
                     // webservice 发送参数
                     String fileID = UUID.randomUUID().toString().replaceAll("-", "");
                     String fileTypeID =  "0EECE637379440F4A6F31E62CC00B66F" ;
